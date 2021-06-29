@@ -10,11 +10,11 @@
 
 // Do not edit the code below.
 var carDetails = {
-  color: 'red',
-  make: 'toyota',
-  model: 'tacoma',
-  year: 1994
-}
+  color: "red",
+  make: "toyota",
+  model: "tacoma",
+  year: 1994,
+};
 // Do not edit the code above.
 
 /*
@@ -23,7 +23,8 @@ var carDetails = {
 
 //Code Here
 
-
+const { color, make, model, year } = carDetails;
+console.log(carDetails);
 
 ////////// PROBLEM 2 //////////
 
@@ -33,15 +34,22 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
-function greeting( obj ) {
+function greeting(obj) {
   //Code Here
-  
+  const newObj = {
+    title: "Queen",
+    firstName: "Betty",
+    lastName: "LeJavascript",
+  };
+
+  const { title, firstName, lastName } = newObj;
+
   // Do not edit the code below.
-  return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
+  return "Hello, " + title + " " + firstName + " " + lastName + "!";
   // Do not edit the code above.
 }
 
-
+console.log(greeting());
 
 ////////// PROBLEM 3 //////////
 
@@ -55,7 +63,21 @@ function greeting( obj ) {
 
 //Code Here
 
+function totalPopulation(obj) {
+  const states = {
+    utah: 3,
+    california: 40,
+    texas: 29,
+    arizona: 7,
+  };
 
+  const { utah, california, texas, arizona } = states;
+  console.log(utah);
+
+  return utah + california + texas + arizona;
+}
+
+console.log(totalPopulation());
 
 ////////// PROBLEM 4 //////////
 
@@ -69,7 +91,19 @@ function greeting( obj ) {
 
 //Code Here
 
+function ingredients(obj) {
+  const macros = {
+    carb: "bread",
+    fat: "bacon",
+    protein: "whey",
+  };
+  const { carb, fat, protein } = macros;
+  const gymMode = [carb, fat, protein];
+  return gymMode;
+  
+}
 
+console.log(ingredients())
 
 ////////// PROBLEM 5 //////////
 
@@ -87,7 +121,18 @@ function greeting( obj ) {
 
 //Code Here
 
+function largeNumbers( {first, second, third} ) {
+if (first < second && first < third) {
+  return first
+}else if (second < first && second < third) {
+  return second
+  }else {
+    return third
+  }
+};
 
+largeNumbers(3, 8, 14)
+console.log(largeNumbers(3, 8, 14))
 
 ////////// PROBLEM 6 //////////
 
@@ -99,4 +144,18 @@ function greeting( obj ) {
 
 //Code Here
 
+function numberGroups ( {a, b, c} ) {
+  for (let i=0; i<arr.length; i++) {
+    
+  }
 
+
+// const newNum = [a ,b, c];
+
+// const numlength = numArr.map(arr=>arr.length).indexOf(Math.max(...numArr.map(arr=>arr.length)));
+
+// // numArr.reduce((a, arr, idx) => arr.length > arrays[a].length ? idx : a , 0)
+
+// console.log(numberGroups())
+
+}

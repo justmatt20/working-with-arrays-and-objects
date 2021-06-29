@@ -11,27 +11,25 @@
   In the example below, we are accessing the property values. Uncomment the code below, run it and look at what prints in the console.
 */
 
-// var values = {
-//   one: 'These',
-//   two: ' are',
-//   three: ' the',
-//   four: ' property',
-//   five: ' values.'
-// } 
+const values = {
+  one: "These",
+  two: " are",
+  three: " the",
+  four: " property",
+  five: " values.",
+};
 
-// for(var key in values) {
-//   console.log(values[key])
-// }
+for (var key in values) {
+  console.log(values[key]);
+}
 
 /*
   In this next example, we are accessing the property names themselves. Uncomment the code below, run it and look at what prints in the console.
 */
 
-// for(var key in values) {
-//   console.log(key)
-// }
-
-
+for (var key in values) {
+  console.log(key);
+}
 
 ////////// PROBLEM 1 //////////
 
@@ -39,11 +37,15 @@
   Inside the function showValues, write a for in loop that concatenates each of the property values and returns the concatenated string.
 */
 
-function showValues( obj ) {
-  //Code Here
+function showValues(obj) {
+  for (let key in values) {
+    const objValues = Object.values(values);
+    // console.log(objValues)
+    console.log(objValues.join(""));
+  }
 }
 
-
+// showValues(values)
 
 ////////// PROBLEM 2 //////////
 
@@ -54,20 +56,39 @@ function showValues( obj ) {
 */
 
 //Code Here
-
-
+const numbers = {
+  one: 1,
+  two: 15,
+  three: 6,
+  four: 9,
+  five: 19,
+};
+function greaterThan10(obj) {
+  for (var key in numbers) {
+    if (numbers[key] > 10) {
+      numbers[key] = 0;
+      console.log(numbers);
+    }
+  }
+}
+greaterThan10(numbers);
 
 ////////// PROBLEM 3 //////////
 
 /*
   Write a function called double that takes in an object.
-  Write a for in loop that loops over the object and changes every value to be itself multipled by 2.
+  Write a for in loop that loops over the object and changes every value to be itself multiplied by 2.
   Return the updated object.
 */
 
 //Code Here
 
-
+function double(obj) {
+  for (let key in numbers) {
+    console.log(numbers[key] * 2);
+  }
+}
+double(numbers);
 
 ////////// PROBLEM 4 //////////
 
@@ -81,7 +102,15 @@ function showValues( obj ) {
 
 //Code Here
 
-
+function secrets(obj) {
+  let empty = "";
+  for (let key in obj) {
+    if (key.includes("sh")) {
+      empty += obj[key];
+    }
+  }
+  return empty;
+}
 
 /* 
   Sometimes it's needed to delete object properties. 
@@ -101,8 +130,6 @@ function showValues( obj ) {
 
 // console.log(deleteAllThethings)
 
-
-
 ////////// PROBLEM 5 //////////
 
 /*
@@ -112,7 +139,14 @@ function showValues( obj ) {
 
 //Code Here
 
-
+function removePassword(obj) {
+  for (let key in obj) {
+    if (key === "password") {
+      delete obj[key];
+    }
+  }
+  return obj;
+}
 
 ////////// PROBLEM 6 //////////
 
@@ -121,8 +155,8 @@ var deleteTheBigNumbers = {
   first: 10,
   second: 20,
   third: 110,
-  fourth: 200
-}
+  fourth: 200,
+};
 // Do not edit the code above.
 
 /*
@@ -131,7 +165,11 @@ var deleteTheBigNumbers = {
 
 //Code Here
 
-
+for (let key in deleteTheBigNumbers) {
+  if (deleteTheBigNumbers[key] > 100) {
+    delete deleteTheBigNumbers[key];
+  }
+}
 
 ////////// PROBLEM 7 //////////
 
@@ -144,7 +182,14 @@ var deleteTheBigNumbers = {
 
 //Code Here
 
-
+function startsWithK(obj) {
+  for (let key in obj) {
+    if (key.startsWith("k")) {
+      delete obj[key];
+    }
+  }
+  return obj;
+}
 
 ////////// PROBLEM 8 //////////
 
@@ -158,5 +203,3 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
-
